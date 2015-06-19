@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="oldie"> <![endif]-->
+<!--[if IE 7 ]>    <html class="oldie"> <![endif]-->
+<!--[if IE 8 ]>    <html class="oldie"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->
+
+<head>
+  <title>Fly To The Limit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./css/styles.css" type="text/css"/>
+  <link rel="stylesheet" href="./font-awesome-4.3.0/css/font-awesome.min.css"> <!-- credit to Font Awesome for the icons. -->
+  <!--[if IE]>
+  <script src="./scripts/ieSupport.js" type="text/javascript"></script>
+<![endif]-->
+
+</head>
+<body>
+  <header>
+  <div class="wrapper">
+       <div class="logo"><a href="./index.html"><img src="./images/FTTLlogo_full.svg" alt="Fly To The Limit company logo"></a></div>
+        <nav>
+          <ul>
+            <li><a class="tab" href="./index.html">home</a></li>
+            <li><a class="tab" href="./flights.html">flights</a></li>
+            <li><a class="tab" href="./gallery.html">gallery</a></li>
+            <li><a class="tab" href="./about.html">about us</a></li>
+            <li><a class="tab" href="./contact.html">contact</a></li>
+            <li><a class="tab" href="./bookaflight.html">book a flight</a></li>
+          </ul>
+          <div class="mobile_menu"> menu <span class="fa fa-bars fa-2x"></span></div>
+        </nav>
+    </div>
+  </header>
+     <noscript> Please enable javascript for full site functionality.</noscript>
+          <main class="book">
+    <form action="">
+       <div class="wrapper">
+            <h1>book a flight</h1>
+            <section class="regular">
+                <input name="first name" class="required" placeholder="first name" type="text"><span class="required">&nbsp;&nbsp;= required.</span>
+                <input name="last name" class="required" placeholder="last name" type="text">
+                <input name="phone" class="required" placeholder="phone number" type="text">
+                <input name="email" class="required" placeholder="email address" type="text">
+            </section>
+            <section class="flight_choice">
+                <div class="outside_in">
+                    <select name="flight_type" class="required" placeholder="select a flight" size="1">
+                      <option value="scenic flights">scenic flights</option>
+                      <option value="aerobatic flights">aerobatic flights</option>
+                      <option value="charters">charters</option>
+                      <option value="photographic flights">photographic flights</option>
+                    </select>
+                    <div class="charters">
+                      <input name="start" type="checkbox">
+                      <input name="start date" class="required" placeholder="start date" type="date">
+                      <input name="start time" class="required" placeholder="start time" type="time">
+                      <input name="location" class="required" placeholder="pickup location" type="text">
+                      <input name="end" type="checkbox">
+                      <input name="end date" class="required" placeholder="end date" type="date">
+                      <input name="start time" class="required" placeholder="end time" type="time">
+                      <input name="location" class="required" placeholder="dropoff location" type="text">
+                      <fieldset class="provision">
+                          <input name="" class="required" placeholder="" type="text">
+                          <input name="" class="required" placeholder="" type="text">
+                          <input name="" class="required" placeholder="" type="text">
+                      </fieldset>
+                      <button type="button" class="button provision" onClick="elementCloner.clone('provision', this, true)"><span class="form_label">+</span> add provision point</button>
+                    </div>
+                </div>
+            </section>
+            <section class="regular">
+                <textarea name="details" placeholder="Other details" type="text"></textarea>
+                <button type="submit" class="button">submit</button>
+            </section>
+        </div>
+    </form>
+</main>
+
+  <footer>
+      <div class="footerbase">
+        <div class="wrapper">
+          <div class="copyright">&copy; Fly To The Limit</div>
+          <div class="site_map"><a href="./sitemap.html">site map</a></div>
+          <div class="social_links">
+              <i class="fa fa-facebook-square fa-2x"></i>
+              <i class="fa fa-twitter-square fa-2x"></i>
+              <i class="fa fa-pinterest-square fa-2x"></i>
+              <i class="fa fa-google-plus-square fa-2x"></i>
+          </div>
+        </div>
+      </div>
+  </footer>
+  <script src="./scripts/universal.js" type="text/javascript"></script>
+  <!--[if IE]>
+  <script type="text/javascript">
+  function showWarning() {
+
+    var main = document.querySelector("MAIN");
+
+    var warning = document.createElement("p");
+    warning.innerText = "Your internet explorer version lower than ie9. Up-grade it at http://windows.microsoft.com/en-us/internet-explorer/download-ie";
+    alert(main+warning);
+    main.appendChild(warning);
+  }
+  </script>
+<![endif]-->
+</body>
+</html>

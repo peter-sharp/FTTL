@@ -1,0 +1,42 @@
+<main class="book">
+    <form action="">
+       <div class="wrapper">
+            <h1>book a flight</h1>
+            <section class="regular">
+                <input name="first name" class="required" placeholder="first name" type="text"><span class="required">&nbsp;&nbsp;= required.</span>
+                <input name="last name" class="required" placeholder="last name" type="text">
+                <input name="phone" class="required" placeholder="phone number" type="text">
+                <input name="email" class="required" placeholder="email address" type="text">
+            </section>
+            <section class="flight_choice">
+                <div class="outside_in">
+                    <select name="flight_type" class="required" placeholder="select a flight" size="1">
+                      <option value="scenic flights">scenic flights</option>
+                      <option value="aerobatic flights">aerobatic flights</option>
+                      <option value="charters">charters</option>
+                      <option value="photographic flights">photographic flights</option>
+                    </select>
+                    div.charters
+                    <input name="start" type="checkbox">
+                    <input name="start date" class="required" placeholder="start date" type="date">
+                    <input name="start time" class="required" placeholder="start time" type="time">
+                    <input name="location" class="required" placeholder="pickup location" type="text">
+                    <input name="end" type="checkbox">
+                    <input name="end date" class="required" placeholder="end date" type="date">
+                    <input name="start time" class="required" placeholder="end time" type="time">
+                    <input name="location" class="required" placeholder="dropoff location" type="text">
+                    <fieldset class="provision">
+                        <input name="" class="required" placeholder="" type="text">
+                        <input name="" class="required" placeholder="" type="text">
+                        <input name="" class="required" placeholder="" type="text">
+                    </fieldset>
+                    <button type="button" class="button provision" onClick="elementCloner.clone('provision', this, true)"><span class="form_label">+</span> add provision point</button>
+                </div>
+            </section>
+            <section class="regular">
+                <textarea name="details" placeholder="Other details" type="text"></textarea>
+                <button type="submit" class="button">submit</button>
+            </section>
+        </div>
+    </form>
+</main>
