@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="oldie"> <![endif]-->
+<!--[if IE 7 ]>    <html class="oldie"> <![endif]-->
+<!--[if IE 8 ]>    <html class="oldie"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->
+
+<head>
+  <title>Fly To The Limit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./css/styles.css" type="text/css"/>
+  <link rel="stylesheet" href="./font-awesome-4.3.0/css/font-awesome.min.css"> <!-- credit to Font Awesome for the icons. -->
+  <!--[if IE]>
+  <script src="./scripts/ieSupport.js" type="text/javascript"></script>
+<![endif]-->
+
+</head>
+<body>
+  <header>
+  <div class="wrapper">
+       <div class="logo"><a href="./index.html"><img src="./images/FTTLlogo_full.svg" alt="Fly To The Limit company logo"></a></div>
+        <nav>
+          <ul>
+            <li><a class="tab" href="./index.html">home</a></li>
+            <li><a class="tab" href="./flights.html">flights</a></li>
+            <li><a class="tab" href="./gallery.html">gallery</a></li>
+            <li><a class="tab" href="./about.html">about us</a></li>
+            <li><a class="tab" href="./contact.html">contact</a></li>
+            <li><a class="tab" href="./bookaflight.html">book a flight</a></li>
+          </ul>
+          <div class="mobile_menu"> menu <span class="fa fa-bars fa-2x"></span></div>
+        </nav>
+    </div>
+  </header>
+     <noscript> Please enable javascript for full site functionality.</noscript>
+          <main class="contact">
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+   <div id="map-canvas"></div>
+   <div class="wrapper input">
+     <label >Select a location:</label>
+     <select name="locations" id="locations" size="1">
+         <option value="queenstown">Queenstown airfield</option>
+         <option value="wanaka">Wanaka airfield</option>
+         <option value="wellington">Wellington office</option>
+     </select>
+  </div>
+   <Section class="info wellington">
+     <h1>Wellington office</h1>
+     <ul>
+          <li class="address">
+              <span class="label">address</span><span class="description">2 Chews Lane, Wellington</span>
+          </li>
+          <li class="hours">
+            <span class="label">opening hours</span>
+              <ul>
+                  <li class="opens">
+                      <span class="label">opens</span><span class="description">12am</span>
+                  </li>
+                  <li class="closes">
+                      <span class="label">closes</span><span class="description">2pm</span>
+                  </li>
+              </ul>
+          </li>
+          <li class="phone">
+              <span class="label">phone</span><span class="description">028824429</span>
+          </li>
+          <li class="email">
+              <span class="label">email</span><span class="description">general_inquiries@fttl.nz</span>
+          </li>
+      </ul>
+    </Section>
+    <Section class="info wanaka">
+      <h1>Wanaka airfield</h1>
+      <ul>
+           <li class="address">
+               <span class="label">address</span><span class="description">83 Studholme Rd, Wanaka</span>
+           </li>
+           <li class="hours">
+             <span class="label">opening hours</span>
+               <ul>
+                   <li class="opens">
+                       <span class="label">opens</span><span class="description">11am</span>
+                   </li>
+                   <li class="closes">
+                       <span class="label">closes</span><span class="description">7pm</span>
+                   </li>
+               </ul>
+           </li>
+           <li class="phone">
+               <span class="label">phone</span><span class="description">035526628</span>
+           </li>
+           <li class="email">
+               <span class="label">email</span><span class="description">inquiries_wanaka@fttl.nz</span>
+           </li>
+      </ul>
+     </Section>
+     <Section class="info queenstown">
+       <h1>Queenstown airfield</h1>
+       <ul>
+           <li class="address">
+               <span class="label">address</span><span class="description">284 Kingston Rd, Queenstown</span>
+           </li>
+           <li class="hours">
+             <span class="label">opening hours</span>
+               <ul>
+                   <li class="opens">
+                       <span class="label">opens</span><span class="description">10am</span>
+                   </li>
+                   <li class="closes">
+                       <span class="label">closes</span><span class="description">6pm</span>
+                   </li>
+               </ul>
+           </li>
+           <li class="phone">
+               <span class="label">phone</span><span class="description">044424428</span>
+           </li>
+           <li class="email">
+               <span class="label">email</span><span class="description">inquiries_queenstown@fttl.nz</span>
+           </li>
+         </ul>
+      </Section>
+</main>
+
+  <footer>
+      <div class="footerbase">
+        <div class="wrapper">
+          <div class="copyright">&copy; Fly To The Limit</div>
+          <div class="site_map"><a href="./sitemap.html">site map</a></div>
+          <div class="social_links">
+              <i class="fa fa-facebook-square fa-2x"></i>
+              <i class="fa fa-twitter-square fa-2x"></i>
+              <i class="fa fa-pinterest-square fa-2x"></i>
+              <i class="fa fa-google-plus-square fa-2x"></i>
+          </div>
+        </div>
+      </div>
+  </footer>
+  <script src="./scripts/universal.js" type="text/javascript"></script>
+  <!--[if IE]>
+  <script type="text/javascript">
+  function showWarning() {
+
+    var main = document.querySelector("MAIN");
+
+    var warning = document.createElement("p");
+    warning.innerText = "Your internet explorer version lower than ie9. Up-grade it at http://windows.microsoft.com/en-us/internet-explorer/download-ie";
+    alert(main+warning);
+    main.appendChild(warning);
+  }
+  </script>
+<![endif]-->
+</body>
+</html>
