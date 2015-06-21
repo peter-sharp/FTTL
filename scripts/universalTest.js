@@ -16,14 +16,17 @@ QUnit.test( "lightbox test", function( assert ) {
 
       assert.ok(fixture);
 
-      Lightbox.init('gallery', 'lighbox');
+      Lightbox.init('gallery', 'lightbox');
 
 
 
       assert.equal(Lightbox.show, false );
+      assert.equal(typeof Lightbox.gallery, 'object');
+      assert.equal(Lightbox.gallery.constructor, 'function HTMLElement() { [native code] }');
       assert.equal(Lightbox.gallery.className, 'gallery');
-      console.log(Lightbox.lightboxOBJ);
-      assert.equal(Lightbox.lightboxOBJ.length, 1);
+
+      assert.equal(typeof Lightbox.lightboxOBJ, 'object');
+      assert.equal(Lightbox.lightboxOBJ.constructor, 'function HTMLElement() { [native code] }');
       assert.equal(Lightbox.lightboxOBJ.className, 'lightbox');
       assert.equal(Lightbox.thumbnails.length, 12);
       done();

@@ -209,8 +209,7 @@ var Lightbox  = { // mostly written during an all nighter so expect the namespac
     lightbox        : {}, // refference to the
     init                : function(galleryPage,lightbox){
         Lightbox.gallery     = document.querySelector('.'+galleryPage);
-
-        Lightbox.lightboxOBJ    = document.querySelector('.'+lightbox);
+        Lightbox.lightboxOBJ = document.querySelector('.'+lightbox);
         Lightbox.thumbnails  = Lightbox.getMediaInClassElements('row');
 
 
