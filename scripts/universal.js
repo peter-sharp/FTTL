@@ -212,6 +212,7 @@ var Lightbox  = { // mostly written during an all nighter so expect the namespac
         Lightbox.lightboxOBJ = document.querySelector('.'+lightbox);
         Lightbox.thumbnails  = Lightbox.getMediaInClassElements('row');
 
+        Lightbox.bindClickEventsToItems(Lightbox.thumbnails, Lightbox.toggleLightboxShow);
 
     },
     //
@@ -250,7 +251,7 @@ var Lightbox  = { // mostly written during an all nighter so expect the namespac
 
     bindClickEventsToItems: function(items, action){
         for(var i in items){
-            var item = this.items[i];
+            var item = items[i];
             item.onclick = action;
         }
     },
@@ -267,10 +268,10 @@ var Lightbox  = { // mostly written during an all nighter so expect the namespac
     toggleLightboxShow :    function(event){ //TODO want to separate functions to initialize the gallery from functions and properties belonging to the lightbox (At least make LightBox Gallery something smaller)
 
 
-      var target = LightBoxGallery.getEventTarget(event);
+      var target = Lightbox.getEventTarget(event);
 
-      var mediaHolder = LightBoxGallery.mediaHolder; // for some reason properties bound with .bind aren't found in the namespace of functions inside them
-      var lightbox =    LightBoxGallery.lightbox;
+      var mediaHolder = Lightbox.mediaHolder; // for some reason properties bound with .bind aren't found in the namespace of functions inside them
+      var lightbox =    Lightbox.lightbox;
 
 
 
