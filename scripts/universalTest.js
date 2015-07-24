@@ -29,6 +29,8 @@ QUnit.test( "lightbox test", function( assert ) {
       assert.equal(Lightbox.lightboxOBJ.constructor, 'function HTMLElement() { [native code] }');
       assert.ok(Lightbox.lightboxOBJ.className.indexOf('lightbox') > -1);
       assert.equal(Lightbox.thumbnails.length, 12);
+
+
       done();
   })
 });
