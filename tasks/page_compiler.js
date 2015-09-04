@@ -6,6 +6,7 @@ var PageCompiler = {
   contentFiles: [],
   outputFolder: './compiled/',
   fs: require('fs'),
+  jsdom: require('../bower_components/jsdom/lib/jsdom.js').jsdom,
 
   compile: function(base,content,outputLocation){
     this.outputFolder = outputLocation;
@@ -25,11 +26,42 @@ var PageCompiler = {
   },
 
 
-  pageSpecific: function ()
+  manipulateHTML: function (html, currentPage)
   {
       //var with page name
       //nested object with html changes for page
       //loop through using .replace() function to insert changes
+
+    try
+    {
+      currentPage = currentPage.replace(".hbs", "");
+      var document = PageCompiler.jsdom(html);
+
+      var window = document.defaultView;
+      var tabs =         window.document.getElementsByClassName('tab');
+      for (t = 0; t <= tabs.length-1; t++) {
+          var tab = tabs[t];
+          var link =      tab.getAttribute("href");
+          if(link.indexOf(currentPage) > -1) {
+              console.log(currentPage+"found!");
+              tab.className += " current";
+
+          }
+          //console.log(tab);
+      }
+
+      return "<!DOCTYPE html>\n"+window.document.documentElement.outerHTML;
+      window.close();
+
+    }
+    catch(error)
+    {
+      console.log(currentPage+": "+window.document.documentElement.outerHTML);
+      console.error("jsdom given:"+ typeof html);
+      //console.warn('\n'+html);
+      throw 'manipulateHTML: '+error;
+    }
+
   },
 
   getBase: function  (base, callback)
@@ -84,20 +116,21 @@ var PageCompiler = {
 
   processContent: function(contentList)
   {
-        console.log("Content files to processs: "+contentList);
+
+        //console.log("Content files to processs: "+contentList);
         this.asyncLoop(contentList.length,function(loop)
         {
           var index = loop.iteration();
-
-          PageCompiler.read(contentList[index],function(file)
+          var fileName = contentList[index];
+          PageCompiler.read(fileName,function(file)
           {
             var currentContent = file;
             PageCompiler.combine(this.base, currentContent, function(combined,error)
             {
                 if(error) console.log("combine "+error);
                 /// file out-put handler here
-
-                PageCompiler.outputFile(combined,contentList[index]);
+                var manipulatedHTML = PageCompiler.manipulateHTML(combined,fileName);
+                PageCompiler.outputFile(manipulatedHTML ,fileName);
                 loop.next();
 
             })
@@ -114,14 +147,14 @@ var PageCompiler = {
   {   //inserts the content file in the middle of the split base file
       var combined = base.slice(); // clones the base array so we don't end up inserting content into the original base
       combined.splice(1,0,content);
-      callback(combined);
+      var result = combined.join("");
+      callback(result);
   },
 
 
 
   outputFile: function(result,contentFile)
   {
-      var result = result.join("");
       var outputLocation = this.outputFolder+contentFile.replace(".hbs", ".html");
 
       if (!this.fs.exists(this.outputFolder.substring(0, this.outputFolder.length - 1)))
@@ -134,7 +167,7 @@ var PageCompiler = {
       this.fs.writeFile(outputLocation, result, function(error)
       {
                       if(error) console.log("file write "+error);
-                      console.log("\n\nTo "+outputLocation+" \n\nwritten{\n"+result+"\n}");
+                      //console.log("\n\nTo "+outputLocation+" \n\nwritten{\n"+result+"\n}");
       })
   }
 };
