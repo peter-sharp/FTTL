@@ -1,40 +1,49 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html class="oldie"> <![endif]-->
-<!--[if IE 7 ]>    <html class="oldie"> <![endif]-->
-<!--[if IE 8 ]>    <html class="oldie"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->
+<!--[if gt IE 8]>--><html><!--<![endif]--><!--[if lt IE 9]><html class="oldie"><![endif]--><head>
+  <title>index</title>
+  <!--TODO add meta tags and description-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" media="screen" href="./css/styles.css" type="text/css">
+  <link rel="stylesheet" media="print" href="./css/print.css" type="text/css">
 
-<head>
-  <title>Fly To The Limit</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="./css/styles.css" type="text/css"/>
-  <link rel="stylesheet" href="./font-awesome-4.3.0/css/font-awesome.min.css"> <!-- credit to Font Awesome for the icons. -->
-  <!--[if IE]>
-  <script src="./scripts/ieSupport.js" type="text/javascript"></script>
+ <!--[if lt IE 9 ]>
+  <script type="text/javascript">
+  
+    function ieHTML5support () {
+      
+      document.createElement('HEADER');
+      document.createElement('HGROUP');
+      document.createElement('NAV');
+      document.createElement('main');
+      document.createElement('SECTION');
+      document.createElement('ARTICLE');
+      document.createElement('FOOTER');
+      
+    }
+    ieHTML5support();
+  </script>
 <![endif]-->
-
 </head>
 <body>
   <header>
   <div class="wrapper">
-       <div class="logo"><a href="./index.html"><img src="./images/FTTLlogo_full.svg" alt="Fly To The Limit company logo"></a></div>
+       <div class="logo"><a href="./index.html"><img src="./images/FTTLlogo_full.svg" alt="Fly To The Limit company logo" onerror="this.src='./images/FTTLlogo_full.png'"></a></div>
         <nav>
           <ul>
-            <li><a class="tab" href="./index.html">home</a></li>
+            <li><a class="tab current" href="./index.html">home</a></li>
             <li><a class="tab" href="./flights.html">flights</a></li>
             <li><a class="tab" href="./gallery.html">gallery</a></li>
             <li><a class="tab" href="./about.html">about us</a></li>
             <li><a class="tab" href="./contact.html">contact</a></li>
             <li><a class="tab" href="./bookaflight.html">book a flight</a></li>
           </ul>
-          <div class="mobile_menu"> menu <span class="fa fa-bars fa-2x"></span></div>
+          <div class="mobile_menu"> menu <span class="icon icon-menu-bars"></span></div>
         </nav>
     </div>
   </header>
      <noscript> Please enable javascript for full site functionality.</noscript>
           <main class="home">
-    <img srcset="./images/Cessna206hstationair2_small.png 1920w,./images/Cessna206hstationair2_small_mobile.png 400w" src="./images/Cessna206hstationair2_small.png" sizes="(max-width: 320)400px : 100vw" alt="Cessna plane" />
+    <img srcset="./images/Cessna206hstationair2_small.png 1920w,./images/Cessna206hstationair2_small_mobile.png 400w" src="./images/Cessna206hstationair2_small.png" sizes="(max-width: 320)400px : 100vw" alt="Cessna plane">
 
     <div>
         <p><strong class="title">Fly To The Limit</strong> is a startup airline operating out of Wanaka and Queenstown offering the best in adventure and scenic flights.
@@ -48,30 +57,38 @@
   <footer>
       <div class="footerbase">
         <div class="wrapper">
-          <div class="copyright">&copy; Fly To The Limit</div>
-          <div class="site_map"><a href="./sitemap.html">site map</a></div>
+          <div class="copyright"> &copy; FlY To The Limit</div>
+          <div class="sitemap"><a href="./sitemap.html">site-map</a></div>
           <div class="social_links">
-              <i class="fa fa-facebook-square fa-2x"></i>
-              <i class="fa fa-twitter-square fa-2x"></i>
-              <i class="fa fa-pinterest-square fa-2x"></i>
-              <i class="fa fa-google-plus-square fa-2x"></i>
+              <a href="#facebook"><span class="icon icon-facebook"></span></a>
+              <a href="#twitter"><span class="icon icon-twitter"></span></a>
+              <a href="#pinterest"><span class="icon icon-pinterest"></span></a>
+              <a href="#googleplus"><span class="icon icon-googleplus"></span></a>
           </div>
         </div>
       </div>
   </footer>
   <script src="./scripts/universal.js" type="text/javascript"></script>
-  <!--[if IE]>
+  <!--[if lt IE 9 ]>
   <script type="text/javascript">
-  function showWarning() {
+    function showWarning() {
+    
+      var main = document.querySelector("MAIN");
+      var body = document.querySelector("BODY");
+      var warning = document.createElement("p");
+      warning.style.backgroundColor = '#faa';
+      warning.style.padding = '10px';
+      warning.style.borderLeft = '10px solid #f00';
+      warning.style.margin = '0px';
+      warning.innerHTML = 'For a better experience on this site please up-grade to the latest version of Internet Explorer: <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">http://windows.microsoft.com/en-us/internet-explorer/download-ie.</a>';
+      //alert(main+warning);
+      body.insertBefore(warning, main);
+    }
+  
+    showWarning();
 
-    var main = document.querySelector("MAIN");
-
-    var warning = document.createElement("p");
-    warning.innerText = "Your internet explorer version lower than ie9. Up-grade it at http://windows.microsoft.com/en-us/internet-explorer/download-ie";
-    alert(main+warning);
-    main.appendChild(warning);
-  }
   </script>
 <![endif]-->
-</body>
-</html>
+
+
+</body></html>
