@@ -1,0 +1,62 @@
+nav {
+    display: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.contact label, .contact select, button, span.required {
+    display: none;
+}
+
+input, select, textarea, fieldset {
+    border: 0;
+    background-color: #fff;
+    display: block;
+    margin: 20px 0;
+}
+
+.label {
+    margin-right: 90px;
+    font-weight: bolder;
+}
+.info {
+    display: block !important; /* to override javascript */
+}
+.team li {
+    position: relative;
+    width: 290px;
+    height: 500px;
+    margin-right: 12px;
+    margin-top: 140px;
+    float: left;
+    vertical-align: top;
+}
+.team ul {
+    margin-top: 20px;
+}
+
+body, header, footer, hgroup, main {
+    font-family: sans-serif;
+}
+
+h1 {
+    margin-bottom: 50px;
+}
+.accordionItem {
+    min-height: 910px;
+}
+
+img {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.logo {
+    width: 300px;
+}
+
+.arrow_right, .button, footer {
+    display: none;
+}
